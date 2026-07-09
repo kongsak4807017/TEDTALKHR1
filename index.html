@@ -1,0 +1,197 @@
+﻿<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>จาวเหนือสุขภาพดีที่ 1 | Narrative Presentation</title>
+    <link rel="icon" href="./จาวเหนือสุขภาพดีที่ 1/Logo/จาวเหนือสุขภาพดีที่ 1.png" />
+    <link rel="stylesheet" href="./styles.css?v=editor1" />
+  </head>
+  <body>
+    <main class="presenter" aria-label="จาวเหนือสุขภาพดีที่ 1 presentation">
+      <section id="stage" class="stage" aria-live="polite">
+        <div class="brand-row">
+          <img
+            class="brand-logo"
+            src="./จาวเหนือสุขภาพดีที่ 1/Logo/จาวเหนือสุขภาพดีที่ 1.png"
+            alt="จาวเหนือสุขภาพดีที่ 1"
+          />
+        </div>
+
+        <div class="visual-system" aria-hidden="true">
+          <div class="sky"></div>
+          <div class="sun-glow"></div>
+          <div class="mountains ridge-back"></div>
+          <div class="mountains ridge-mid"></div>
+          <div class="mountains ridge-front"></div>
+          <div class="fog fog-a"></div>
+          <div class="fog fog-b"></div>
+          <svg class="route-line" viewBox="0 0 1600 900" preserveAspectRatio="none">
+            <path id="routePath" d="M 40 720 C 250 620, 290 450, 470 500 S 770 720, 940 560 S 1160 300, 1520 250" />
+            <circle class="route-dot dot-a" cx="470" cy="500" r="7" />
+            <circle class="route-dot dot-b" cx="940" cy="560" r="7" />
+            <circle class="route-dot dot-c" cx="1520" cy="250" r="7" />
+          </svg>
+          <div class="lanna-orb orb-a"></div>
+          <div class="lanna-orb orb-b"></div>
+          <div class="grain"></div>
+        </div>
+
+        <video id="slideVideo" class="slide-video" muted playsinline loop></video>
+        <div id="videoShade" class="video-shade" aria-hidden="true"></div>
+
+        <article id="slide" class="slide-content"></article>
+
+        <footer class="deck-footer">
+          <div class="part-chip" id="partChip"></div>
+          <div class="progress-shell" aria-hidden="true">
+            <div id="progressBar" class="progress-bar"></div>
+          </div>
+          <div class="counter" id="counter"></div>
+        </footer>
+
+        <nav class="controls" aria-label="Presentation controls">
+          <button id="prevBtn" type="button" aria-label="Previous slide">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" /></svg>
+          </button>
+          <button id="nextBtn" type="button" aria-label="Next slide">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
+          </button>
+          <button id="fullBtn" type="button" aria-label="Fullscreen">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5" /></svg>
+          </button>
+        </nav>
+
+        <a id="editDeckButton" class="edit-deck-button" href="./index.html?editor=1" aria-label="Open deck editor">Edit</a>
+      </section>
+
+      <aside id="editorPanel" class="editor-panel" hidden aria-label="Deck editor">
+        <header class="editor-header">
+          <div>
+            <p class="editor-kicker">หลังบ้าน</p>
+            <h2>Deck Editor</h2>
+          </div>
+          <a class="editor-present-link" href="./index.html" aria-label="กลับไปโหมด present">Present</a>
+        </header>
+
+        <div class="editor-scroll">
+          <section class="editor-section">
+            <label class="editor-field">
+              <span>Slide</span>
+              <select id="editorSlideSelect"></select>
+            </label>
+            <div class="editor-actions">
+              <button id="editorAdd" type="button">Add</button>
+              <button id="editorDuplicate" type="button">Duplicate</button>
+              <button id="editorDelete" type="button">Delete</button>
+            </div>
+          </section>
+
+          <section class="editor-section">
+            <label class="editor-field">
+              <span>Part</span>
+              <input id="editPart" type="text" />
+            </label>
+            <label class="editor-field">
+              <span>Tone</span>
+              <select id="editTone">
+                <option value="opening">Opening</option>
+                <option value="urgent">Emergency</option>
+                <option value="community">Community</option>
+                <option value="city">City</option>
+                <option value="future">Future</option>
+              </select>
+            </label>
+            <label class="editor-field">
+              <span>Layout</span>
+              <select id="editLayout">
+                <option value="title">Title</option>
+                <option value="center">Center</option>
+                <option value="split">Split Quote</option>
+                <option value="map">Map</option>
+                <option value="network">Network</option>
+                <option value="closing">Closing</option>
+              </select>
+            </label>
+            <label class="editor-field">
+              <span>Text align</span>
+              <select id="editAlign">
+                <option value="default">Default</option>
+                <option value="left">Left</option>
+                <option value="center">Center</option>
+                <option value="right">Right</option>
+              </select>
+            </label>
+          </section>
+
+          <section class="editor-section">
+            <label class="editor-field">
+              <span>Chapter</span>
+              <input id="editChapter" type="text" />
+            </label>
+            <label class="editor-field">
+              <span>Headline</span>
+              <textarea id="editHeadline" rows="3"></textarea>
+            </label>
+            <label class="editor-field">
+              <span>Quote</span>
+              <textarea id="editQuote" rows="3"></textarea>
+            </label>
+            <label class="editor-field">
+              <span>Subhead</span>
+              <textarea id="editSubhead" rows="3"></textarea>
+            </label>
+            <label class="editor-field">
+              <span>Body</span>
+              <textarea id="editBody" rows="4"></textarea>
+            </label>
+            <label class="editor-field">
+              <span>List / Provinces / Nodes (1 บรรทัดต่อ 1 item)</span>
+              <textarea id="editItems" rows="5"></textarea>
+            </label>
+            <label class="editor-check">
+              <input id="editLogo" type="checkbox" />
+              <span>Show logo on slide</span>
+            </label>
+          </section>
+
+          <section class="editor-section">
+            <label class="editor-field">
+              <span>Background image URL / data</span>
+              <textarea id="editBgImage" rows="3" placeholder="./assets/scenes/part-1-emergency.png"></textarea>
+            </label>
+            <label class="editor-file">
+              <span>Upload image</span>
+              <input id="editBgImageFile" type="file" accept="image/*" />
+            </label>
+            <label class="editor-field">
+              <span>Background video URL / data</span>
+              <textarea id="editBgVideo" rows="3" placeholder="./media/cinematic-part-1-emergency.mp4"></textarea>
+            </label>
+            <label class="editor-file">
+              <span>Upload video</span>
+              <input id="editBgVideoFile" type="file" accept="video/*" />
+            </label>
+            <label class="editor-field">
+              <span>Panorama position</span>
+              <input id="editSceneShift" type="range" min="-14" max="14" step="0.5" />
+            </label>
+          </section>
+
+          <section class="editor-section">
+            <div class="editor-actions">
+              <button id="editorExport" type="button">Export JSON</button>
+              <button id="editorImport" type="button">Import JSON</button>
+              <button id="editorReset" type="button">Reset</button>
+            </div>
+            <input id="editorImportFile" type="file" accept="application/json,.json" hidden />
+            <p id="editorStatus" class="editor-status" aria-live="polite"></p>
+          </section>
+        </div>
+      </aside>
+    </main>
+
+    <script src="./footage.js?v=editor1"></script>
+    <script src="./app.js?v=editor1"></script>
+  </body>
+</html>
